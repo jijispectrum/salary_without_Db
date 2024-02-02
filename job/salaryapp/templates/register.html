@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form HTML CSS</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="form-box">
+        <div class="header-text">
+           Employee Registration
+        </div>
+        <form method="post" action="{% url 'registration' %}">
+            {% csrf_token %}
+        <input placeholder="Name" type="text">
+        <input placeholder="Email Address" type="text">
+        <input placeholder="Your Password" type="password">
+        <input placeholder="Mobile number" type="text">
+        <input placeholder="Job Title" type="text">
+        <input placeholder="Year of Experience" type="text">
+        <input id="terms" type="checkbox">
+        <label for="terms"></label><span>Agree with <a href="#">Terms & Conditions</a></span>
+        <button>Register</button>
+    </form>
+
+        <!-- Add a link for already registered users to login -->
+        <p>Already registered? <a href="{% url 'login' %}">Login</a></p>
+        <!-- Replace 'login' with the actual URL or path to your login page -->
+    </div>
+</body>
+</html>

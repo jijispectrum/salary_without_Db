@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form HTML CSS</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="form-box">
+        <div class="header-text">
+           Employee Login
+        </div>
+        <form method="post" action="{% url 'predict_salary' %}">
+            {% csrf_token %}
+        <input placeholder="Email Address" type="text">
+        <input placeholder="Your Password" type="password">
+        <button>Login</button>
+    </form>
+      
+
+        <!-- Add a link for new users to register -->
+        <p>New user? <a href="{% url 'registration' %}">Register</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Prediction</title>
+    <link href="{% static 'css/salary_style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="form-box">
+        <div class="header-text">
+           Salary Prediction
+        </div>
+        
+        <!-- Add your form fields for the salary prediction -->
+        <form method="post" action="">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="predict-button">Predict</button>
+        </form>
+
+        <!-- Add any additional content or styling specific to the salary prediction page -->
+        
+    </div>
+</body>
+</html>
